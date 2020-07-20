@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
 
   s.authors      = "Pontus Abrahamsson"
   s.homepage     = "https://github.com/huynqbibabo/react-native-media-library"
-  s.platform     = :ios, "10.0"
+  s.platform     = :ios, "9.3"
 
   s.source       = { :git => "https://github.com/huynqbibabo/react-native-media-library.git", :tag => "v#{s.version}" }
   s.source_files   = 'MediaLibrary/**/*.{h,m}'

@@ -38,6 +38,7 @@ repositories {
   maven {
     url "$projectDir/maven"
   }
+  google()
 }
 
 dependencies {
