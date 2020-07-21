@@ -2,7 +2,7 @@ require 'json'
 version = JSON.parse(File.read('package.json'))["version"]
 
 Pod::Spec.new do |s|
-  s.name         = 'ReactNativeMediaLibrary'
+  s.name         = 'react-native-media-library'
   s.version      = version
   s.summary      = "Provides access media library"
   s.license      = "MIT"
