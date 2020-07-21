@@ -7,7 +7,7 @@ target 'TestApp' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
-  pod 'ReactNativeMediaLibrary', :path => '../node_modules/react-native-media-library'
+  pod 'react-native-media-library', :path => '../node_modules/react-native-media-library'
 
   target 'TestAppTests' do
     inherit! :complete

@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "10.3"
 
   s.source       = { :git => "https://github.com/huynqbibabo/react-native-media-library.git", :tag => "v#{s.version}" }
-  s.source_files   = 'MediaLibrary/**/*.{h,m}'
+  s.source_files   = 'ios/MediaLibrary/**/*.{h,m}'
 
   s.dependency 'React'
 end
