@@ -21,5 +21,5 @@
     "noImplicitReturns": true,
     "outDir": "./build"
   },
-  "include": ["./src"],
+  "include": ["./src"]
 }
