@@ -72,13 +72,13 @@ final class MediaLibraryConstants {
       MediaStore.Files.FileColumns.MEDIA_TYPE,
       MediaStore.Images.Media.WIDTH,
       MediaStore.Images.Media.HEIGHT,
-      MediaStore.Images.Media.DATE_TAKEN,
+//      MediaStore.Images.Media.DATE_TAKEN,
       MediaStore.Images.Media.DATE_MODIFIED,
       MediaStore.Images.Media.LATITUDE,
       MediaStore.Images.Media.LONGITUDE,
-      MediaStore.Images.Media.ORIENTATION,
-      MediaStore.Video.VideoColumns.DURATION,
-      MediaStore.Images.Media.BUCKET_ID,
+//      MediaStore.Images.Media.ORIENTATION,
+//      MediaStore.Video.VideoColumns.DURATION,
+//      MediaStore.Images.Media.BUCKET_ID,
   };
 
   static final String[][] exifTags = new String[][]{

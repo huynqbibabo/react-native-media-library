@@ -1,18 +1,18 @@
 package com.reactnativemedialibrary;
 
-import android.Manifest;
-import android.content.ContentResolver;
+//import android.Manifest;
+//import android.content.ContentResolver;
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.database.ContentObserver;
+//import android.content.pm.PackageManager;
+//import android.database.ContentObserver;
 import android.database.Cursor;
-import android.net.Uri;
+//import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Bundle;
-import android.os.Handler;
-import android.provider.MediaStore;
+//import android.os.Bundle;
+//import android.os.Handler;
+//import android.provider.MediaStore;
 import android.provider.MediaStore.Files;
-import android.provider.MediaStore.Images.Media;
+//import android.provider.MediaStore.Images.Media;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -37,8 +37,8 @@ import com.facebook.react.bridge.Promise;
 
 import static com.reactnativemedialibrary.MediaLibraryConstants.ERROR_NO_PERMISSIONS;
 import static com.reactnativemedialibrary.MediaLibraryConstants.ERROR_NO_PERMISSIONS_MESSAGE;
-import static com.reactnativemedialibrary.MediaLibraryConstants.ERROR_NO_PERMISSIONS_MODULE;
-import static com.reactnativemedialibrary.MediaLibraryConstants.ERROR_NO_PERMISSIONS_MODULE_MESSAGE;
+//import static com.reactnativemedialibrary.MediaLibraryConstants.ERROR_NO_PERMISSIONS_MODULE;
+//import static com.reactnativemedialibrary.MediaLibraryConstants.ERROR_NO_PERMISSIONS_MODULE_MESSAGE;
 import static com.reactnativemedialibrary.MediaLibraryConstants.EXTERNAL_CONTENT;
 import static com.reactnativemedialibrary.MediaLibraryConstants.LIBRARY_DID_CHANGE_EVENT;
 import static com.reactnativemedialibrary.MediaLibraryConstants.MEDIA_TYPE_ALL;
@@ -364,17 +364,19 @@ public class MediaLibraryModule extends ReactContextBaseJavaModule {
   //   }
 
     private int getAssetsTotalCount(int mediaType) {
-      Cursor countCursor = mContext.getContentResolver().query(
-          EXTERNAL_CONTENT,
-          new String[]{"count(*) AS count"},
-          Files.FileColumns.MEDIA_TYPE + " == " + mediaType,
-          null,
-          null
-      );
+      try (Cursor countCursor = mContext.getContentResolver().query(
+              EXTERNAL_CONTENT,
+              new String[]{"count(*) AS count"},
+              Files.FileColumns.MEDIA_TYPE + " == " + mediaType,
+              null,
+              null
+      )) {
 
-      countCursor.moveToFirst();
+        assert countCursor != null;
+        countCursor.moveToFirst();
 
-      return countCursor.getInt(0);
+        return countCursor.getInt(0);
+      }
     }
   
 }
